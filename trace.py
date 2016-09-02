@@ -8,8 +8,10 @@ import re
 import csv
 import gzip
 
-
-with open("trace-short.txt") as traceFile:
+regex = '.*cycle:(\S+)\s+pc:v:(\S+)\s+isWrite:\S+\s+type:(.+?)paddr:p:(\S+)\s+coreid:(\S+)\s+inst:(\S+)$'
+matcher = re.compile(regex)
+print regex
+with open("line.txt") as traceFile:
 	for line in traceFile:
-		print line.rstrip()
-
+		group = matcher.match(line)
+		print group.groups()
