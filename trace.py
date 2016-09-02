@@ -5,7 +5,6 @@
 # Date: 9/2/16
 
 import re
-import csv
 import gzip
 
 # regular expression to find the information we need in each line
@@ -15,8 +14,10 @@ regex = '.*cycle:(\S+)\s+pc:v:(\S+)\s+isWrite:\S+\s+type:(.+?)\s+paddr:p:(\S+)\s
 matcher = re.compile(regex)
 
 # print a header to the csv file
-print ','.join(('cycle','pc','type','paddr','coreid','inst'))
-with open("line.txt") as traceFile:
+header = ','.join(('cycle','pc','type','paddr','coreid','inst'))
+with open("trace-short.txt") as traceFile, gzip.open("trace.csv.gz", "w+") as csvFile:
+	csvFile.write(header + "\n")
 	for line in traceFile:
 		group = matcher.match(line)
-        print ','.join(group.groups())
+		csvString = ','.join(group.groups())
+		csvFile.write(csvString + "\n")
