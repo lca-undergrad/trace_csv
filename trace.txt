@@ -1,0 +1,4 @@
+this is an example
+of a trace file text file
+cool example huh?
+I like onions
