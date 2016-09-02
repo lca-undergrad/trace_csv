@@ -15,7 +15,7 @@ matcher = re.compile(regex)
 
 # print a header to the csv file
 header = ','.join(('cycle','pc','type','paddr','coreid','inst'))
-with open("trace-short.txt") as traceFile, gzip.open("trace.csv.gz", "w+") as csvFile:
+with gzip.open("trace-short.txt.gz") as traceFile, gzip.open("trace.csv.gz", "w+") as csvFile:
 	csvFile.write(header + "\n")
 	for line in traceFile:
 		group = matcher.match(line)
