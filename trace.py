@@ -9,7 +9,7 @@ import csv
 import gzip
 
 
-with open("trace.txt") as traceFile:
+with open("trace-short.txt") as traceFile:
 	for line in traceFile:
 		print line.rstrip()
 
