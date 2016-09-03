@@ -1,0 +1,8 @@
+Eviction (clean)
+Eviction (dirty)
+Eviction (writable)
+Fetch Request
+Read Request
+type
+Upgrade Request
+Write Request

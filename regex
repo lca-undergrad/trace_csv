@@ -1,1 +1,0 @@
-cycle:(\S+)\s+pc:(v:\S+)\s+isWrite:(\S+)\s+type:(.+?)paddr:p:(\S+)\s+coreid:(\S+)\s+inst:(\S+)$
